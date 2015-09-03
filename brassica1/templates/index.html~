@@ -2,6 +2,6 @@
 {% block title %}Homepage - {{ block.super }}{% endblock %}
 {% block content %}
     <h1>Brassica: a teensy app for the Kabbage patch</h1>
-    <p>{{ number }}</p>
+    <p>{% if number %}Number exists!{% endif %}</p>
     <p>Brassica lets you search Twitter and Wikipedia<p>
 {% endblock %}
