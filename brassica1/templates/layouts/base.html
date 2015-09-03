@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <title>
+        {% block title %}Tasty Brassica{% endblock %}
+    </title>
+       <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        {% block header %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
+</body>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Click to crunch</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  
+</html>
