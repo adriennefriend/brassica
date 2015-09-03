@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <title>Brassica: a teensy app for the Kabbage patch</title>
+       <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <h1>Brassica: a teensy app for the Kabbage patch</h1>
+    <p>Brassica lets you search Twitter and Wikipedia<p>
+</body>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Click to crunch</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+</html>
