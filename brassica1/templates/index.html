@@ -1,15 +1,14 @@
 {% extends 'layouts/base.html' %}
-{% block title %}Homepage - {{ block.super }}{% endblock %}
+
+{% block title %}Brassica {{ block.super }}{% endblock %}
 {% block content %}
-    <h1>Brassica: a teensy app for the Kabbage patch</h1>
-    <p>Brassica lets you search Twitter and Wikipedia<p>
+    <h1>Brassica: a teensy addition to the Kabbage patch</h1>
+    <h3>Search Twitter and Wikipedia!</h3>
     <div class="col-xs-6">
     {% for tweet in twitter %}
     <a href="http://twitter.com/{{ tweet.user.name }}/status/{{ tweet.id }}">
-    <p>{{ tweet.text }}</p>
-    <p>{{ tweet.user.id }}</p>
-    <p>{{ tweet.user.name }}</p>
-    <p>{{ tweet.user.screenname }}</p>
+    <p> {{ tweet.user.name }} tweeted:
+        {{ tweet.text }} </p>
     </a>
     {% endfor %} 
     </div>
@@ -20,9 +19,11 @@
     </a>
     {% endfor %}
     </div>
-<!--double curlies spit something out-->
+
 
 {% endblock %}
 
 
-<!--so we have to use the {% in .html files so that when Django is rendering the template, it knows what's HTML and what's python-->
+<!--when writing loops in .html files, use {% so that when Django renders the template, it knows what's HTML and what's Python-->
+
+<!--use double curlies to display content-->

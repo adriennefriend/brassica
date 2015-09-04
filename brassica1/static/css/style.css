@@ -1,4 +1,18 @@
 body {
     font-family: 'IM Fell DW Pica', serif;   
+    background-color: #cce5cc;
+}
+
+h1, h2, h3 {
+    margin-left:10px;
+}
+
+form {
+    margin-left:25px;
+    margin-top:15px;
+}
+
+.btn {
+    margin-right:5px;
 }
 
