@@ -4,11 +4,18 @@
     <h1>Brassica: a teensy app for the Kabbage patch</h1>
     <p>Brassica lets you search Twitter and Wikipedia<p>
     {% for tweet in twitter %}
+    <a href="http://twitter.com/{{ tweet.user.name }}/status/{{ tweet.id }}">
     <p>{{ tweet.text }}</p>
     <p>{{ tweet.user.id }}</p>
     <p>{{ tweet.user.name }}</p>
     <p>{{ tweet.user.screenname }}</p>
+    </a>
     {% endfor %} 
+    {% for title in wikipedia %}
+    <a href="http://wikipedia.org/wiki/{{ title }}">
+    <p>{{ title }}</p>
+    </a>
+    {% endfor %}
 <!--double curlies spit something out-->
 
 {% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.conf import settings
 import requests
 import tweepy
+import wikipedia
 
 def index(request):
     auth = tweepy.OAuthHandler(
@@ -12,10 +13,19 @@ def index(request):
         settings.TWITTER_ACCESS_TOKEN,
         settings.TWITTER_ACCESS_SECRET_TOKEN
     )
-    api = tweepy.API(auth)
+    twitter = tweepy.API(auth)
 
-    data = api.search(request.GET['query'])
-    return render(request, 'index.html', {'twitter': data
+    if 'query' in request.GET:
+        query = request.GET['query']
+        
+        twitterdata = twitter.search(query)
+        wikidata = wikipedia.search(query)
+    else: 
+        twitterdata = None
+        wikidata = None
+    
+    
+    return render(request, 'index.html', {'twitter': twitterdata, 'wikipedia': wikidata
         })
         
 
