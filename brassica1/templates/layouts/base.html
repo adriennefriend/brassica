@@ -5,19 +5,19 @@
     <title>
         {% block title %}Tasty Brassica{% endblock %}
     </title>
-       <link rel="stylesheet" href="{% static 'css/style.css' %}" />
         {% block header %}{% endblock %}
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+       <link href='https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400,400italic' rel='stylesheet' type='text/css'>
+       <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
     <div class="row">
-        <div class="col-lg-6">
-            <div class="input-group">
-                <form action="" method="GET">
-                    <input type="submit" class="form-control" value="Crunch crunch">
+      
+                <form class="form-inline" action="" method="GET">
+                    <button type="submit" class="form-control btn btn-success">Crunch crunch</button>
                     <input type="text" class="form-control" placeholder="Search for..." name="query">
                 </form>
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+            
     </div>
     {% block content %}{% endblock %}
     {% block footer %}{% endblock %}

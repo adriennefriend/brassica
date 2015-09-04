@@ -3,6 +3,7 @@
 {% block content %}
     <h1>Brassica: a teensy app for the Kabbage patch</h1>
     <p>Brassica lets you search Twitter and Wikipedia<p>
+    <div class="col-xs-6">
     {% for tweet in twitter %}
     <a href="http://twitter.com/{{ tweet.user.name }}/status/{{ tweet.id }}">
     <p>{{ tweet.text }}</p>
@@ -11,11 +12,14 @@
     <p>{{ tweet.user.screenname }}</p>
     </a>
     {% endfor %} 
+    </div>
+    <div class="col-xs-6">
     {% for title in wikipedia %}
     <a href="http://wikipedia.org/wiki/{{ title }}">
     <p>{{ title }}</p>
     </a>
     {% endfor %}
+    </div>
 <!--double curlies spit something out-->
 
 {% endblock %}
