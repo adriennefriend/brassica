@@ -3,8 +3,12 @@ from django.conf import settings
 import requests
 import tweepy
 import wikipedia
+import time
 
 def index(request):
+    start = current_milli_time()
+    print 'START: ', start
+    
     auth = tweepy.OAuthHandler(
         settings.TWITTER_CONSUMER_KEY,
         settings.TWITTER_CONSUMER_SECRET
@@ -19,7 +23,9 @@ def index(request):
         query = request.GET['query']
         
         twitterdata = twitter.search(query)
+        print 'AFTER TWITTER CALL: ', current_milli_time() - start
         wikidata = wikipedia.search(query)
+        print 'AFTER WIKIPEDIA CALL: ', current_milli_time() - start
     else: 
         twitterdata = None
         wikidata = None
@@ -28,7 +34,8 @@ def index(request):
     return render(request, 'index.html', {'twitter': twitterdata, 'wikipedia': wikidata
         })
         
-
+def current_milli_time():
+    return int(round(time.time() * 1000)) # to get the current time in miliseconds
 
 
 # in the controller, there's a function for each endpoint
