@@ -5,11 +5,13 @@
     <title>
         {% block title %}Tasty Brassica{% endblock %}
     </title>
+    
         {% block header %}{% endblock %}
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
        <link href='https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400,400italic' rel='stylesheet' type='text/css'>
        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
+
 <body>
     <div class="row">
 <p></p>
@@ -21,10 +23,10 @@
                 
     </div>
         {% block content %}{% endblock %}
-        {% block footer %}{% endblock %}
+        {% block footer %}{% endblock %} 
 </body>
 </html>
 
 
-<!--create a header block and put the title in the header block, and then put it above the search bar-->
+<!--Future to-do: create a header block and put the title in the header block, and then put it above the search bar-->
 <!--use mdn instead of w3s-->
