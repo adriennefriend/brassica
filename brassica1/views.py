@@ -22,7 +22,7 @@ def index(request):
     if 'query' in request.GET:
         query = request.GET['query']
         
-        twitterdata = twitter.search(query)
+        twitterdata = twitter.search(query, 'en')
         print 'AFTER TWITTER CALL: ', current_milli_time() - start
         wikidata = wikipedia.search(query)
         print 'AFTER WIKIPEDIA CALL: ', current_milli_time() - start
