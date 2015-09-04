@@ -12,6 +12,7 @@ html5lib==0.999999
 jsonfield==1.0.3
 oauthlib==1.0.3
 pep8==1.6.2
+psycopg2==2.5.4
 py==1.4.30
 pytest==2.7.2
 requests==2.7.0
