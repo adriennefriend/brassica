@@ -14,7 +14,7 @@ def index(request):
     )
     api = tweepy.API(auth)
 
-    data = api.search('cookies')
+    data = api.search(request.GET['query'])
     return render(request, 'index.html', {'twitter': data
         })
         
