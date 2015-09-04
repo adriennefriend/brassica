@@ -2,6 +2,16 @@
 {% block title %}Homepage - {{ block.super }}{% endblock %}
 {% block content %}
     <h1>Brassica: a teensy app for the Kabbage patch</h1>
-    <p>{% if number %}Number exists!{% endif %}</p>
     <p>Brassica lets you search Twitter and Wikipedia<p>
+    {% for tweet in twitter %}
+    <p>{{ tweet.text }}</p>
+    <p>{{ tweet.user.id }}</p>
+    <p>{{ tweet.user.name }}</p>
+    <p>{{ tweet.user.screenname }}</p>
+    {% endfor %} 
+<!--double curlies spit something out-->
+
 {% endblock %}
+
+
+<!--so we have to use the {% in .html files so that when Django is rendering the template, it knows what's HTML and what's python-->

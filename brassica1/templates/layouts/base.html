@@ -9,19 +9,21 @@
         {% block header %}{% endblock %}
 </head>
 <body>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <form action="" method="GET">
+                    <input type="submit" class="form-control" value="Crunch crunch">
+                    <input type="text" class="form-control" placeholder="Search for..." name="query">
+                </form>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div>
     {% block content %}{% endblock %}
     {% block footer %}{% endblock %}
 </body>
-
-
-<div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Click to crunch</button>
-      </span>
-      <input type="text" class="form-control" placeholder="Search for...">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-  
 </html>
+
+
+<!--create a header block and put the title in the header block, and then put it above the search bar-->
+<!--use mdn instead of w3s-->
